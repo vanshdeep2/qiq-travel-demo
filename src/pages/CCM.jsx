@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import AgentTlModal from '../components/AgentTlModal'
+import CoachingHealthPanel from '../components/CoachingHealthPanel'
+import MetricInsightDrawer from '../components/MetricInsightDrawer'
 import Nav from '../components/Nav'
 import FlowBar from '../components/FlowBar'
-import HealthStatCard from '../components/HealthStatCard'
 import LedgerTable from '../components/LedgerTable'
-import DrawerShell from '../components/DrawerShell'
+import ModalShell from '../components/ModalShell'
 import SparklineChart from '../components/charts/SparklineChart'
 import SparkBarChart from '../components/charts/SparkBarChart'
 import { CALLS_PILL, LIVE_LABEL } from '../data/executiveConstants'
@@ -13,13 +13,13 @@ import {
   BEST_PRACTICE_CARDS,
   CF_BAR_COLORS,
   CF_WEEKLY,
-  COACHING_HEALTH_STATS,
   COACHING_LEDGER_ROWS,
   COACHING_LEDGER_SUMMARY,
   COACHING_WEEK_INDEX,
   HERO_CHIPS,
   HERO_STATS,
   PATTERN_CARDS,
+  QUEUE_COMPARISON,
   QUALITY_SUMMARY,
   AMENDMENTS_AHT,
   AMENDMENTS_FCR,
@@ -55,8 +55,8 @@ function DrawerTrendChart({ dataKey, color, formatValue }) {
 }
 
 export default function CCM() {
-  const navigate = useNavigate()
   const [metricsDrawerOpen, setMetricsDrawerOpen] = useState(false)
+  const [insightMetric, setInsightMetric] = useState(null)
   const [agentTlModalOpen, setAgentTlModalOpen] = useState(false)
   const [agentTlModalSlug, setAgentTlModalSlug] = useState(null)
   const [calls, setCalls] = useState([])
@@ -102,38 +102,75 @@ export default function CCM() {
             </div>
             <div className="hero-narrative">
               <p>
-                Weeks 1-4: Holiday Amendments &amp; Cancellations showed rising AHT, climbing repeat contact rate, and falling FCR and CSAT. Daily micro coaching fired on amendments agents but behaviour did not improve - agents continued processing cancellations without Save &amp; Rebook offers.
+                Weeks 1–4: Holiday Amendments &amp; Cancellations showed rising AHT, climbing repeat contact rate, and falling FCR and CSAT. Daily micro coaching fired on amendments agents but behaviour did not improve - agents continued closing calls without Save & Rebook.
               </p>
               <p>
-                Week 5: Four agents flagged for formal TL-led coaching after 7+ consecutive days of the same micro coaching trigger (no Save &amp; Rebook on amendment calls). This intervention point is marked on all trend charts.
+                Week 5: Four agents flagged for formal TL-led coaching after 7+ consecutive days of the same micro coaching trigger (no resolution confirmation on amendments calls). This intervention point is marked on all trend charts.
               </p>
               <p>
-                Weeks 6-8: Post-coaching recovery visible - Amendments FCR rose from 37% at W5 to 59% by W8, CSAT partially recovered, repeat contact rate dropped, and micro coaching frequency on coached agents fell sharply.
+                Weeks 6–8: Post-coaching recovery visible - Amendments FCR rose from 37% at W5 to 59% by W8, CSAT partially recovered, repeat contact rate dropped, and micro coaching frequency on coached agents fell sharply.
               </p>
               <p>
                 Holiday Amendments &amp; Cancellations remains the worst-performing queue on every KPI. Documentation Accuracy and Save &amp; Rebook are the lowest-scoring quality pillars on amendment contacts.
               </p>
             </div>
             <div className="hero-chips">
-              {HERO_CHIPS.map((chip) => (
-                <div key={chip.text} className={`hero-chip ${chip.className}`}>
+              {HERO_CHIPS.map((chip, i) => (
+                <button
+                  key={chip.text}
+                  type="button"
+                  className={`hero-chip ${chip.className} clickable-card`}
+                  onClick={() => setInsightMetric(['ccm-chip-returns', 'ccm-chip-coaching', 'ccm-chip-recovery'][i])}
+                >
                   <span className="chip-dot" style={{ background: chip.dotColor }} />
                   {chip.text}
-                </div>
+                </button>
               ))}
             </div>
           </div>
           <div className="hero-divider" />
           <div className="hero-right">
             <div className="hero-stats">
-              {HERO_STATS.map((stat) => (
-                <div key={stat.label} className="hero-stat-row">
+              {HERO_STATS.map((stat, i) => (
+                <button
+                  key={stat.label}
+                  type="button"
+                  className="hero-stat-row clickable-card"
+                  onClick={() => setInsightMetric(`ccm-hero-stat-${i}`)}
+                >
                   <span className="hero-stat-val">{stat.value}</span>
                   <span className="hero-stat-lbl">{stat.label}</span>
-                </div>
+                </button>
               ))}
             </div>
           </div>
+        </div>
+
+        <div className="connector">Queue Comparison · Week 8</div>
+        <p className="section-sublabel">Holiday Amendments &amp; Cancellations vs other queues on key operational KPIs</p>
+        <div className="drivers-table-wrap queue-comparison-wrap">
+          <table className="drivers-table queue-comparison-table">
+            <thead>
+              <tr>
+                <th>Queue</th>
+                <th>FCR</th>
+                <th>AHT</th>
+                <th>RCR</th>
+                <th>CSAT</th>
+              </tr>
+            </thead>
+            <tbody>
+              {QUEUE_COMPARISON.map((row) => (
+                <tr key={row.queue} className={row.highlight ? 'queue-row-highlight' : undefined}>
+                  <td className="subcat-name">{row.queue}</td>
+                  <td>{row.fcr}</td>
+                  <td>{row.aht}</td>
+                  <td>{row.rcr}</td>
+                  <td>{row.csat}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
 
         <div className="connector">Performance Trends · 8 Weeks</div>
@@ -144,15 +181,15 @@ export default function CCM() {
           </button>
         </div>
         <div className="chart-grid">
-          <button type="button" className="chart-card" onClick={() => setMetricsDrawerOpen(true)}>
+          <button type="button" className="chart-card" onClick={() => setInsightMetric('ccm-aht')}>
             <div className="chart-top">
               <div className="chart-top-main">
                 <div className="chart-title">Average Handle Time</div>
                 <div className="chart-current val-amber">5m 48s</div>
-                <div className="chart-meta">Target: 4m 30s</div>
+                <div className="chart-meta">Target: 4m 30s · 8-week avg</div>
                 <div className="chart-var chg-amber">+28.9% vs target</div>
               </div>
-              <span className="chart-drill">All metrics →</span>
+              <span className="chart-drill">Root cause →</span>
             </div>
             <div className="chart-area">
               <SparklineChart
@@ -165,19 +202,19 @@ export default function CCM() {
               />
             </div>
             <div className="chart-note">
-              AHT elevated by Amendments queue - improving post-W5 coaching on amendment handle efficiency
+              AHT elevated by amendments drivers - improving post-W5 coaching on handle efficiency
             </div>
           </button>
 
-          <button type="button" className="chart-card" onClick={() => setMetricsDrawerOpen(true)}>
+          <button type="button" className="chart-card" onClick={() => setInsightMetric('ccm-fcr')}>
             <div className="chart-top">
               <div className="chart-top-main">
                 <div className="chart-title">First Contact Resolution</div>
                 <div className="chart-current val-red">61.0%</div>
-                <div className="chart-meta">Target: 78%</div>
+                <div className="chart-meta">Target: 78% · 8-week avg</div>
                 <div className="chart-var chg-red">-21.8% vs target</div>
               </div>
-              <span className="chart-drill">All metrics →</span>
+              <span className="chart-drill">Root cause →</span>
             </div>
             <div className="chart-area">
               <SparklineChart
@@ -190,48 +227,21 @@ export default function CCM() {
               />
             </div>
             <div className="chart-note">
-              FCR trough at W5; recovery W6-W8 driven by formal coaching on four amendments agents
+              FCR trough at W5; recovery W6–W8 driven by formal coaching on four amendments agents
             </div>
           </button>
-
-          <div className="chart-card" id="kpi-returns-dual">
-            <div className="chart-top">
-              <div className="chart-top-main">
-                <div className="chart-title">Holiday Amendments &amp; Cancellations · AHT + FCR</div>
-                <div className="chart-current val-amber">7m 24s · 50% FCR</div>
-                <div className="chart-meta">Worst-performing queue · Dual-axis trend</div>
-              </div>
-            </div>
-            <div className="chart-area">
-              <SparklineChart
-                labels={WK_LABELS}
-                data={AMENDMENTS_AHT}
-                color="#d97706"
-                height={140}
-                formatValue={formatAht}
-                secondaryData={AMENDMENTS_FCR}
-                primaryName="AHT"
-                secondaryName="FCR"
-                secondaryFormatValue={fmtPct}
-                {...chartMarkerProps}
-              />
-            </div>
-            <div className="chart-note">
-              Amendments AHT peaked W5 at 8m 15s while FCR hit trough at 37% - both recovering post-formal coaching W6-W8
-            </div>
-          </div>
 
           <button
             type="button"
             className="chart-card"
-            onClick={() => navigate('/search?criticalOnly=true')}
+            onClick={() => setInsightMetric('ccm-critical-failures')}
           >
             <div className="chart-top">
               <div className="chart-top-main">
-                <div className="chart-title">Critical Failures per Week</div>
-                <div className="chart-current val-amber">9</div>
+                <div className="chart-title">Critical Failures · W8</div>
+                <div className="chart-current val-amber">41</div>
               </div>
-              <span className="chart-drill">View contacts →</span>
+              <span className="chart-drill">Root cause →</span>
             </div>
             <div className="chart-area">
               <SparkBarChart
@@ -243,13 +253,14 @@ export default function CCM() {
               />
             </div>
             <div className="chart-note">
-              85 critical failures W1-W4 vs 26 W6-W8 - policy misquotes, no Save &amp; Rebook, and verification failures cluster on amendments
+              387 critical failures W1–W4 vs 118 W6–W8 - policy misquotes, no resolution confirmation, and verification failures cluster on returns
             </div>
           </button>
 
-          <div className="pattern-card pattern-card-green qi-summary-card">
+          <button type="button" className="chart-card pattern-card pattern-card-green qi-summary-card" onClick={() => setInsightMetric('ccm-quality-summary')}>
             <div className="pattern-top">
               <div className="pattern-title">Quality Improvement Summary</div>
+              <span className="chart-drill">Root cause →</span>
             </div>
             {QUALITY_SUMMARY.map((item) => (
               <div key={item.label} className="qi-stat-row">
@@ -257,15 +268,11 @@ export default function CCM() {
                 <div className="qi-stat-lbl">{item.label}</div>
               </div>
             ))}
-          </div>
+          </button>
         </div>
 
         <div className="connector">Coaching Health · Week 8</div>
-        <div className="coaching-health coaching-health--compact">
-          {COACHING_HEALTH_STATS.map((stat) => (
-            <HealthStatCard key={stat.label} {...stat} />
-          ))}
-        </div>
+        <CoachingHealthPanel />
 
         <div className="connector">Coaching Impact Ledger · 8-Week Period</div>
         <p className="section-sublabel">Formal coaching sessions from W5 intervention through recovery in W6–W8</p>
@@ -301,8 +308,13 @@ export default function CCM() {
         <div className="connector">Systemic Patterns Identified · Week 8</div>
         <p className="section-sublabel">Issues that span multiple KPIs and require structural or team-level intervention</p>
         <div className="pattern-grid">
-          {PATTERN_CARDS.map((card) => (
-            <div key={card.title} className={`pattern-card pattern-card-${card.variant}`}>
+          {PATTERN_CARDS.map((card, i) => (
+            <button
+              key={card.title}
+              type="button"
+              className={`pattern-card pattern-card-${card.variant} clickable-card`}
+              onClick={() => setInsightMetric(`ccm-pattern-${i}`)}
+            >
               <div className="pattern-top">
                 <div className="pattern-title">{card.title}</div>
                 <span className="pattern-level">{card.level}</span>
@@ -315,30 +327,44 @@ export default function CCM() {
                   </span>
                 ))}
               </div>
-            </div>
+              <div className="ckp-drill">Details →</div>
+            </button>
           ))}
         </div>
 
         <div className="connector">Validated Best Practices · Week 8</div>
         <div className="bp-grid">
-          {BEST_PRACTICE_CARDS.map((card) => (
-            <div key={card.title} className="bp-card">
+          {BEST_PRACTICE_CARDS.map((card, i) => (
+            <button
+              key={card.title}
+              type="button"
+              className="bp-card clickable-card"
+              onClick={() => setInsightMetric(`ccm-bp-${i}`)}
+            >
               <div className="bp-title">{card.title}</div>
               <div className="bp-evidence">{card.evidence}</div>
               <div className="bp-agents">{card.agents}</div>
               <div className="bp-rec">{card.rec}</div>
-            </div>
+              <div className="ckp-drill">Details →</div>
+            </button>
           ))}
         </div>
 
         <FlowBar activePage="ccm" />
       </div>
 
-      <DrawerShell
+      <MetricInsightDrawer
+        open={Boolean(insightMetric)}
+        onClose={() => setInsightMetric(null)}
+        metricId={insightMetric}
+      />
+
+      <ModalShell
         open={metricsDrawerOpen}
         onClose={() => setMetricsDrawerOpen(false)}
         title="Performance Trends - All Metrics"
         subtitle="8-week trends with W5 formal coaching intervention marked on all charts."
+        size="lg"
       >
         {drawerSections.map((section) => (
           <div key={section.id} className="drawer-section" id={section.id}>
@@ -353,16 +379,49 @@ export default function CCM() {
               </div>
               <div className="drawer-w5-badge">Week 8</div>
             </div>
-            <DrawerTrendChart
-              dataKey={section.dataKey}
-              color={section.color}
-              formatValue={(v) => formatDrawerValue(section, v)}
-            />
-            {section.alert && <div className="alert-box alert-amber">{section.alert}</div>}
+            {section.type === 'amendments-dual' ? (
+              <>
+                <div className="drawer-chart-wrap">
+                  <SparklineChart
+                    labels={WK_LABELS}
+                    data={AMENDMENTS_AHT}
+                    color="#d97706"
+                    height={130}
+                    formatValue={formatAht}
+                    secondaryData={AMENDMENTS_FCR}
+                    primaryName="AHT"
+                    secondaryName="FCR"
+                    secondaryFormatValue={fmtPct}
+                    {...chartMarkerProps}
+                  />
+                </div>
+                {section.insightMetricId && (
+                  <button
+                    type="button"
+                    className="chart-drill metrics-drawer-drill"
+                    onClick={() => {
+                      setMetricsDrawerOpen(false)
+                      setInsightMetric(section.insightMetricId)
+                    }}
+                  >
+                    Root cause →
+                  </button>
+                )}
+              </>
+            ) : (
+              <>
+                <DrawerTrendChart
+                  dataKey={section.dataKey}
+                  color={section.color}
+                  formatValue={(v) => formatDrawerValue(section, v)}
+                />
+                {section.alert && <div className="alert-box alert-amber">{section.alert}</div>}
+              </>
+            )}
             <div className="drawer-note">{section.note}</div>
           </div>
         ))}
-      </DrawerShell>
+      </ModalShell>
 
       <AgentTlModal
         open={agentTlModalOpen}

@@ -1,130 +1,792 @@
 {
-  "n": 2200,
-  "aht": 362.3890909090909,
-  "fcr": 61,
-  "csat": 3.4936818181818157,
+  "n": 10000,
+  "aht": 361.9347,
+  "fcr": 63.1,
+  "csat": 3.603309999999974,
   "rcr": 23,
-  "er": 7.590909090909091,
-  "tr": 13.40909090909091,
-  "csatLow": 18,
-  "byQueue": {
-    "Holiday Amendments & Cancellations": {
-      "count": 964,
-      "aht": 442.9927385892116,
-      "fcr": 50.933609958506224,
-      "csat": 3.0290456431535264,
-      "rcr": 38.69294605809129
+  "er": 9.2,
+  "tr": 14.099999999999998,
+  "csatLow": 15.559999999999999,
+  "byL1": {
+    "Amendments & Cancellations": {
+      "count": 3309,
+      "aht": 419.1483831973406,
+      "fcr": 55.27349652462979,
+      "csat": 3.3158053792686704,
+      "rcr": 33.24267150196434
     },
-    "New Booking Enquiries": {
-      "count": 706,
-      "aht": 322.4362606232295,
-      "fcr": 70.25495750708215,
-      "csat": 3.8502832861189864,
-      "rcr": 12.747875354107649
+    "Bookings & Reservations": {
+      "count": 1692,
+      "aht": 334.69739952718675,
+      "fcr": 66.19385342789597,
+      "csat": 3.8963947990543706,
+      "rcr": 13.06146572104019
+    },
+    "Payments & Refunds": {
+      "count": 2379,
+      "aht": 394.60655737704917,
+      "fcr": 58.51197982345523,
+      "csat": 3.3888608659100488,
+      "rcr": 28.49936948297604
+    },
+    "Pre-Travel Support": {
+      "count": 897,
+      "aht": 276.6164994425864,
+      "fcr": 74.47045707915272,
+      "csat": 3.9673355629877376,
+      "rcr": 9.587513935340022
     },
     "Post-Travel & Complaints": {
-      "count": 530,
-      "aht": 269.0018867924528,
-      "fcr": 66.98113207547169,
-      "csat": 3.8637735849056614,
-      "rcr": 8.11320754716981
+      "count": 1097,
+      "aht": 277.4849589790337,
+      "fcr": 75.84320875113947,
+      "csat": 3.9740200546946283,
+      "rcr": 12.670920692798541
+    },
+    "Account & General": {
+      "count": 626,
+      "aht": 279.2044728434505,
+      "fcr": 74.92012779552716,
+      "csat": 3.974600638977632,
+      "rcr": 12.140575079872203
     }
+  },
+  "byQueue": {
+    "Amendments & Cancellations": {
+      "count": 3309,
+      "aht": 419.1483831973406,
+      "fcr": 55.27349652462979,
+      "csat": 3.3158053792686704,
+      "rcr": 33.24267150196434
+    },
+    "Bookings & Reservations": {
+      "count": 1692,
+      "aht": 334.69739952718675,
+      "fcr": 66.19385342789597,
+      "csat": 3.8963947990543706,
+      "rcr": 13.06146572104019
+    },
+    "Payments & Refunds": {
+      "count": 2379,
+      "aht": 394.60655737704917,
+      "fcr": 58.51197982345523,
+      "csat": 3.3888608659100488,
+      "rcr": 28.49936948297604
+    },
+    "Pre-Travel Support": {
+      "count": 897,
+      "aht": 276.6164994425864,
+      "fcr": 74.47045707915272,
+      "csat": 3.9673355629877376,
+      "rcr": 9.587513935340022
+    },
+    "Post-Travel & Complaints": {
+      "count": 1097,
+      "aht": 277.4849589790337,
+      "fcr": 75.84320875113947,
+      "csat": 3.9740200546946283,
+      "rcr": 12.670920692798541
+    },
+    "Account & General": {
+      "count": 626,
+      "aht": 279.2044728434505,
+      "fcr": 74.92012779552716,
+      "csat": 3.974600638977632,
+      "rcr": 12.140575079872203
+    }
+  },
+  "highRisk": {
+    "count": 4093,
+    "aht": 459.56853163938433,
+    "fcr": 49.596872709504034
+  },
+  "lowRisk": {
+    "count": 5907,
+    "fcr": 72.45640765193838
   },
   "byWeek": [
     {
       "week": "W1",
-      "aht": 362.47636363636366,
-      "fcr": 50.90909090909091,
-      "csat": 3.581454545454542,
-      "cf": 17,
-      "amendmentsAht": 438.664,
-      "amendmentsFcr": 55.2
+      "aht": 358.38955823293173,
+      "fcr": 62.81124497991968,
+      "csat": 3.6714859437751057,
+      "cf": 77,
+      "returnsAht": 450.85135135135135,
+      "returnsFcr": 47.10424710424711
     },
     {
       "week": "W2",
-      "aht": 370.1127272727273,
-      "fcr": 62.18181818181818,
-      "csat": 3.546545454545454,
-      "cf": 26,
-      "amendmentsAht": 459.3076923076923,
-      "amendmentsFcr": 49.572649572649574
+      "aht": 364.76198083067095,
+      "fcr": 60.70287539936102,
+      "csat": 3.6870607028754034,
+      "cf": 82,
+      "returnsAht": 472.27016129032256,
+      "returnsFcr": 42.54032258064516
     },
     {
       "week": "W3",
-      "aht": 382.24727272727273,
-      "fcr": 58.54545454545455,
-      "csat": 3.43018181818182,
-      "cf": 26,
-      "amendmentsAht": 472.7769230769231,
-      "amendmentsFcr": 46.92307692307692
+      "aht": 377.57234212629896,
+      "fcr": 62.11031175059952,
+      "csat": 3.5687450039968027,
+      "cf": 105,
+      "returnsAht": 492.125,
+      "returnsFcr": 47.159090909090914
     },
     {
       "week": "W4",
-      "aht": 391.24,
-      "fcr": 50.54545454545455,
-      "csat": 3.2232727272727306,
-      "cf": 24,
-      "amendmentsAht": 490.55725190839695,
-      "amendmentsFcr": 34.35114503816794
+      "aht": 392.2653876898481,
+      "fcr": 58.033573141486805,
+      "csat": 3.4254996003197458,
+      "cf": 123,
+      "returnsAht": 511.8354203935599,
+      "returnsFcr": 41.32379248658318
     },
     {
       "week": "W5",
-      "aht": 383.12,
-      "fcr": 62.909090909090914,
-      "csat": 3.3854545454545466,
-      "cf": 14,
-      "amendmentsAht": 496.4159292035398,
-      "amendmentsFcr": 43.36283185840708
+      "aht": 387.1374900079936,
+      "fcr": 58.752997601918466,
+      "csat": 3.41039168665068,
+      "cf": 59,
+      "returnsAht": 519.6384615384616,
+      "returnsFcr": 40
     },
     {
       "week": "W6",
-      "aht": 341.5890909090909,
-      "fcr": 68.72727272727272,
-      "csat": 3.584363636363634,
-      "cf": 9,
-      "amendmentsAht": 406.74311926605503,
-      "amendmentsFcr": 56.88073394495413
+      "aht": 343.896,
+      "fcr": 67.36,
+      "csat": 3.64616,
+      "cf": 45,
+      "returnsAht": 418.65644171779144,
+      "returnsFcr": 58.48670756646217
     },
     {
       "week": "W7",
-      "aht": 332.05454545454546,
-      "fcr": 69.81818181818183,
-      "csat": 3.6101818181818164,
-      "cf": 7,
-      "amendmentsAht": 393.73636363636365,
-      "amendmentsFcr": 65.45454545454545
+      "aht": 338.8496,
+      "fcr": 67.92,
+      "csat": 3.6966399999999986,
+      "cf": 32,
+      "returnsAht": 406.7551867219917,
+      "returnsFcr": 58.298755186722
     },
     {
       "week": "W8",
-      "aht": 336.27272727272725,
-      "fcr": 64.36363636363637,
-      "csat": 3.5879999999999996,
-      "cf": 7,
-      "amendmentsAht": 379.90697674418607,
-      "amendmentsFcr": 58.139534883720934
+      "aht": 332.5296,
+      "fcr": 67.12,
+      "csat": 3.720960000000002,
+      "cf": 41,
+      "returnsAht": 391.77245508982037,
+      "returnsFcr": 63.87225548902195
     }
   ],
   "byChannel": {
-    "voice": 0.6645454545454546,
-    "email": 0.2190909090909091,
-    "chat": 0.11636363636363636
+    "voice": 0.6525,
+    "email": 0.2157,
+    "chat": 0.1318
   },
-  "coachedAmendmentsFcr": {
+  "coachedReturnsFcr": {
     "Lerato Nkosi": {
-      "w1w4": 35.294117647058826,
-      "w7w8": 100
+      "w1w4": 44.62809917355372,
+      "w7w8": 90
     },
     "Pieter Botha": {
-      "w1w4": 44.44444444444444,
+      "w1w4": 35.16483516483517,
       "w7w8": 100
     },
     "Busisiwe Maseko": {
-      "w1w4": 25,
-      "w7w8": 100
+      "w1w4": 29.78723404255319,
+      "w7w8": 90.9090909090909
     },
     "Ayanda Mbeki": {
-      "w1w4": 15.384615384615385,
-      "w7w8": 100
+      "w1w4": 38.372093023255815,
+      "w7w8": 83.33333333333334
+    }
+  },
+  "driverStats": {
+    "byL1": {
+      "Amendments & Cancellations": {
+        "volume": 3309,
+        "share": 33.1,
+        "fcr": 55.3,
+        "aht": 419,
+        "esc": 12.5,
+        "drivers": {
+          "Tour Date Change Request": {
+            "name": "Tour Date Change Request",
+            "volume": 916,
+            "share": 27.7,
+            "fcr": 49.7,
+            "aht": 458,
+            "esc": 15.1
+          },
+          "Cruise Cabin Upgrade": {
+            "name": "Cruise Cabin Upgrade",
+            "volume": 229,
+            "share": 6.9,
+            "fcr": 78.6,
+            "aht": 278,
+            "esc": 6.1
+          },
+          "Cancellation - Full": {
+            "name": "Cancellation - Full",
+            "volume": 739,
+            "share": 22.3,
+            "fcr": 47.6,
+            "aht": 458,
+            "esc": 11.1
+          },
+          "Cancellation - Partial Party": {
+            "name": "Cancellation - Partial Party",
+            "volume": 439,
+            "share": 13.3,
+            "fcr": 52.2,
+            "aht": 458,
+            "esc": 16.6
+          },
+          "Name Change on Booking": {
+            "name": "Name Change on Booking",
+            "volume": 196,
+            "share": 5.9,
+            "fcr": 72.4,
+            "aht": 281,
+            "esc": 3.1
+          },
+          "Penalty Waiver Request": {
+            "name": "Penalty Waiver Request",
+            "volume": 497,
+            "share": 15,
+            "fcr": 50.7,
+            "aht": 459,
+            "esc": 15.7
+          },
+          "Departure Airport Change": {
+            "name": "Departure Airport Change",
+            "volume": 156,
+            "share": 4.7,
+            "fcr": 78.2,
+            "aht": 278,
+            "esc": 9
+          },
+          "Dietary / Accessibility Amendment": {
+            "name": "Dietary / Accessibility Amendment",
+            "volume": 137,
+            "share": 4.1,
+            "fcr": 70.8,
+            "aht": 277,
+            "esc": 7.3
+          }
+        }
+      },
+      "Bookings & Reservations": {
+        "volume": 1692,
+        "share": 16.9,
+        "fcr": 66.2,
+        "aht": 335,
+        "esc": 6.3,
+        "drivers": {
+          "Escorted Tour Enquiry": {
+            "name": "Escorted Tour Enquiry",
+            "volume": 476,
+            "share": 28.1,
+            "fcr": 66.6,
+            "aht": 335,
+            "esc": 6.3
+          },
+          "Cruise Availability": {
+            "name": "Cruise Availability",
+            "volume": 364,
+            "share": 21.5,
+            "fcr": 66.8,
+            "aht": 335,
+            "esc": 6
+          },
+          "Group Booking": {
+            "name": "Group Booking",
+            "volume": 286,
+            "share": 16.9,
+            "fcr": 65,
+            "aht": 335,
+            "esc": 8
+          },
+          "Solo Traveller Package": {
+            "name": "Solo Traveller Package",
+            "volume": 167,
+            "share": 9.9,
+            "fcr": 70.1,
+            "aht": 334,
+            "esc": 4.8
+          },
+          "Deposit & Payment Terms": {
+            "name": "Deposit & Payment Terms",
+            "volume": 252,
+            "share": 14.9,
+            "fcr": 64.7,
+            "aht": 333,
+            "esc": 6.3
+          },
+          "Early Bird Offer": {
+            "name": "Early Bird Offer",
+            "volume": 147,
+            "share": 8.7,
+            "fcr": 63.9,
+            "aht": 335,
+            "esc": 5.4
+          }
+        }
+      },
+      "Payments & Refunds": {
+        "volume": 2379,
+        "share": 23.8,
+        "fcr": 58.5,
+        "aht": 395,
+        "esc": 11,
+        "drivers": {
+          "Cancellation Refund Status": {
+            "name": "Cancellation Refund Status",
+            "volume": 822,
+            "share": 34.6,
+            "fcr": 48.9,
+            "aht": 462,
+            "esc": 12.9
+          },
+          "Balance Payment Failure": {
+            "name": "Balance Payment Failure",
+            "volume": 452,
+            "share": 19,
+            "fcr": 72.8,
+            "aht": 278,
+            "esc": 6.4
+          },
+          "Travel Insurance Query": {
+            "name": "Travel Insurance Query",
+            "volume": 425,
+            "share": 17.9,
+            "fcr": 75.5,
+            "aht": 280,
+            "esc": 8
+          },
+          "Penalty Fee Dispute": {
+            "name": "Penalty Fee Dispute",
+            "volume": 680,
+            "share": 28.6,
+            "fcr": 50,
+            "aht": 462,
+            "esc": 13.5
+          }
+        }
+      },
+      "Pre-Travel Support": {
+        "volume": 897,
+        "share": 9,
+        "fcr": 74.5,
+        "aht": 277,
+        "esc": 6.2,
+        "drivers": {
+          "Travel Documentation": {
+            "name": "Travel Documentation",
+            "volume": 275,
+            "share": 30.7,
+            "fcr": 79.3,
+            "aht": 279,
+            "esc": 4.7
+          },
+          "Itinerary Query": {
+            "name": "Itinerary Query",
+            "volume": 251,
+            "share": 28,
+            "fcr": 72.9,
+            "aht": 275,
+            "esc": 6.8
+          },
+          "Visa & Documentation": {
+            "name": "Visa & Documentation",
+            "volume": 193,
+            "share": 21.5,
+            "fcr": 69.9,
+            "aht": 275,
+            "esc": 6.7
+          },
+          "Transfer Arrangements": {
+            "name": "Transfer Arrangements",
+            "volume": 178,
+            "share": 19.8,
+            "fcr": 74.2,
+            "aht": 277,
+            "esc": 7.3
+          }
+        }
+      },
+      "Post-Travel & Complaints": {
+        "volume": 1097,
+        "share": 11,
+        "fcr": 75.8,
+        "aht": 277,
+        "esc": 4.5,
+        "drivers": {
+          "Tour Manager Complaint": {
+            "name": "Tour Manager Complaint",
+            "volume": 254,
+            "share": 23.2,
+            "fcr": 76.8,
+            "aht": 279,
+            "esc": 3.9
+          },
+          "Accommodation Issue": {
+            "name": "Accommodation Issue",
+            "volume": 242,
+            "share": 22.1,
+            "fcr": 76,
+            "aht": 278,
+            "esc": 2.9
+          },
+          "Missed Excursion": {
+            "name": "Missed Excursion",
+            "volume": 127,
+            "share": 11.6,
+            "fcr": 80.3,
+            "aht": 278,
+            "esc": 7.1
+          },
+          "Flight Disruption": {
+            "name": "Flight Disruption",
+            "volume": 201,
+            "share": 18.3,
+            "fcr": 73.6,
+            "aht": 277,
+            "esc": 7
+          },
+          "Lost Luggage": {
+            "name": "Lost Luggage",
+            "volume": 139,
+            "share": 12.7,
+            "fcr": 73.4,
+            "aht": 274,
+            "esc": 4.3
+          },
+          "Refund Post-Travel": {
+            "name": "Refund Post-Travel",
+            "volume": 82,
+            "share": 7.5,
+            "fcr": 78,
+            "aht": 276,
+            "esc": 2.4
+          },
+          "ABTA/ATOL Query": {
+            "name": "ABTA/ATOL Query",
+            "volume": 52,
+            "share": 4.7,
+            "fcr": 71.2,
+            "aht": 280,
+            "esc": 1.9
+          }
+        }
+      },
+      "Account & General": {
+        "volume": 626,
+        "share": 6.3,
+        "fcr": 74.9,
+        "aht": 279,
+        "esc": 5.1,
+        "drivers": {
+          "Account & Login Issues": {
+            "name": "Account & Login Issues",
+            "volume": 219,
+            "share": 35,
+            "fcr": 75.3,
+            "aht": 282,
+            "esc": 5.5
+          },
+          "Policy Clarification": {
+            "name": "Policy Clarification",
+            "volume": 160,
+            "share": 25.6,
+            "fcr": 71.9,
+            "aht": 276,
+            "esc": 3.8
+          },
+          "Follow-up Calls": {
+            "name": "Follow-up Calls",
+            "volume": 137,
+            "share": 21.9,
+            "fcr": 77.4,
+            "aht": 281,
+            "esc": 7.3
+          },
+          "Feedback": {
+            "name": "Feedback",
+            "volume": 110,
+            "share": 17.6,
+            "fcr": 75.5,
+            "aht": 276,
+            "esc": 3.6
+          }
+        }
+      }
+    },
+    "byL2": {
+      "Amendments & Cancellations::Tour Date Change Request": {
+        "name": "Tour Date Change Request",
+        "volume": 916,
+        "share": 27.7,
+        "fcr": 49.7,
+        "aht": 458,
+        "esc": 15.1
+      },
+      "Amendments & Cancellations::Cruise Cabin Upgrade": {
+        "name": "Cruise Cabin Upgrade",
+        "volume": 229,
+        "share": 6.9,
+        "fcr": 78.6,
+        "aht": 278,
+        "esc": 6.1
+      },
+      "Amendments & Cancellations::Cancellation - Full": {
+        "name": "Cancellation - Full",
+        "volume": 739,
+        "share": 22.3,
+        "fcr": 47.6,
+        "aht": 458,
+        "esc": 11.1
+      },
+      "Amendments & Cancellations::Cancellation - Partial Party": {
+        "name": "Cancellation - Partial Party",
+        "volume": 439,
+        "share": 13.3,
+        "fcr": 52.2,
+        "aht": 458,
+        "esc": 16.6
+      },
+      "Amendments & Cancellations::Name Change on Booking": {
+        "name": "Name Change on Booking",
+        "volume": 196,
+        "share": 5.9,
+        "fcr": 72.4,
+        "aht": 281,
+        "esc": 3.1
+      },
+      "Amendments & Cancellations::Penalty Waiver Request": {
+        "name": "Penalty Waiver Request",
+        "volume": 497,
+        "share": 15,
+        "fcr": 50.7,
+        "aht": 459,
+        "esc": 15.7
+      },
+      "Amendments & Cancellations::Departure Airport Change": {
+        "name": "Departure Airport Change",
+        "volume": 156,
+        "share": 4.7,
+        "fcr": 78.2,
+        "aht": 278,
+        "esc": 9
+      },
+      "Amendments & Cancellations::Dietary / Accessibility Amendment": {
+        "name": "Dietary / Accessibility Amendment",
+        "volume": 137,
+        "share": 4.1,
+        "fcr": 70.8,
+        "aht": 277,
+        "esc": 7.3
+      },
+      "Bookings & Reservations::Escorted Tour Enquiry": {
+        "name": "Escorted Tour Enquiry",
+        "volume": 476,
+        "share": 28.1,
+        "fcr": 66.6,
+        "aht": 335,
+        "esc": 6.3
+      },
+      "Bookings & Reservations::Cruise Availability": {
+        "name": "Cruise Availability",
+        "volume": 364,
+        "share": 21.5,
+        "fcr": 66.8,
+        "aht": 335,
+        "esc": 6
+      },
+      "Bookings & Reservations::Group Booking": {
+        "name": "Group Booking",
+        "volume": 286,
+        "share": 16.9,
+        "fcr": 65,
+        "aht": 335,
+        "esc": 8
+      },
+      "Bookings & Reservations::Solo Traveller Package": {
+        "name": "Solo Traveller Package",
+        "volume": 167,
+        "share": 9.9,
+        "fcr": 70.1,
+        "aht": 334,
+        "esc": 4.8
+      },
+      "Bookings & Reservations::Deposit & Payment Terms": {
+        "name": "Deposit & Payment Terms",
+        "volume": 252,
+        "share": 14.9,
+        "fcr": 64.7,
+        "aht": 333,
+        "esc": 6.3
+      },
+      "Bookings & Reservations::Early Bird Offer": {
+        "name": "Early Bird Offer",
+        "volume": 147,
+        "share": 8.7,
+        "fcr": 63.9,
+        "aht": 335,
+        "esc": 5.4
+      },
+      "Payments & Refunds::Cancellation Refund Status": {
+        "name": "Cancellation Refund Status",
+        "volume": 822,
+        "share": 34.6,
+        "fcr": 48.9,
+        "aht": 462,
+        "esc": 12.9
+      },
+      "Payments & Refunds::Balance Payment Failure": {
+        "name": "Balance Payment Failure",
+        "volume": 452,
+        "share": 19,
+        "fcr": 72.8,
+        "aht": 278,
+        "esc": 6.4
+      },
+      "Payments & Refunds::Travel Insurance Query": {
+        "name": "Travel Insurance Query",
+        "volume": 425,
+        "share": 17.9,
+        "fcr": 75.5,
+        "aht": 280,
+        "esc": 8
+      },
+      "Payments & Refunds::Penalty Fee Dispute": {
+        "name": "Penalty Fee Dispute",
+        "volume": 680,
+        "share": 28.6,
+        "fcr": 50,
+        "aht": 462,
+        "esc": 13.5
+      },
+      "Pre-Travel Support::Travel Documentation": {
+        "name": "Travel Documentation",
+        "volume": 275,
+        "share": 30.7,
+        "fcr": 79.3,
+        "aht": 279,
+        "esc": 4.7
+      },
+      "Pre-Travel Support::Itinerary Query": {
+        "name": "Itinerary Query",
+        "volume": 251,
+        "share": 28,
+        "fcr": 72.9,
+        "aht": 275,
+        "esc": 6.8
+      },
+      "Pre-Travel Support::Visa & Documentation": {
+        "name": "Visa & Documentation",
+        "volume": 193,
+        "share": 21.5,
+        "fcr": 69.9,
+        "aht": 275,
+        "esc": 6.7
+      },
+      "Pre-Travel Support::Transfer Arrangements": {
+        "name": "Transfer Arrangements",
+        "volume": 178,
+        "share": 19.8,
+        "fcr": 74.2,
+        "aht": 277,
+        "esc": 7.3
+      },
+      "Post-Travel & Complaints::Tour Manager Complaint": {
+        "name": "Tour Manager Complaint",
+        "volume": 254,
+        "share": 23.2,
+        "fcr": 76.8,
+        "aht": 279,
+        "esc": 3.9
+      },
+      "Post-Travel & Complaints::Accommodation Issue": {
+        "name": "Accommodation Issue",
+        "volume": 242,
+        "share": 22.1,
+        "fcr": 76,
+        "aht": 278,
+        "esc": 2.9
+      },
+      "Post-Travel & Complaints::Missed Excursion": {
+        "name": "Missed Excursion",
+        "volume": 127,
+        "share": 11.6,
+        "fcr": 80.3,
+        "aht": 278,
+        "esc": 7.1
+      },
+      "Post-Travel & Complaints::Flight Disruption": {
+        "name": "Flight Disruption",
+        "volume": 201,
+        "share": 18.3,
+        "fcr": 73.6,
+        "aht": 277,
+        "esc": 7
+      },
+      "Post-Travel & Complaints::Lost Luggage": {
+        "name": "Lost Luggage",
+        "volume": 139,
+        "share": 12.7,
+        "fcr": 73.4,
+        "aht": 274,
+        "esc": 4.3
+      },
+      "Post-Travel & Complaints::Refund Post-Travel": {
+        "name": "Refund Post-Travel",
+        "volume": 82,
+        "share": 7.5,
+        "fcr": 78,
+        "aht": 276,
+        "esc": 2.4
+      },
+      "Post-Travel & Complaints::ABTA/ATOL Query": {
+        "name": "ABTA/ATOL Query",
+        "volume": 52,
+        "share": 4.7,
+        "fcr": 71.2,
+        "aht": 280,
+        "esc": 1.9
+      },
+      "Account & General::Account & Login Issues": {
+        "name": "Account & Login Issues",
+        "volume": 219,
+        "share": 35,
+        "fcr": 75.3,
+        "aht": 282,
+        "esc": 5.5
+      },
+      "Account & General::Policy Clarification": {
+        "name": "Policy Clarification",
+        "volume": 160,
+        "share": 25.6,
+        "fcr": 71.9,
+        "aht": 276,
+        "esc": 3.8
+      },
+      "Account & General::Follow-up Calls": {
+        "name": "Follow-up Calls",
+        "volume": 137,
+        "share": 21.9,
+        "fcr": 77.4,
+        "aht": 281,
+        "esc": 7.3
+      },
+      "Account & General::Feedback": {
+        "name": "Feedback",
+        "volume": 110,
+        "share": 17.6,
+        "fcr": 75.5,
+        "aht": 276,
+        "esc": 3.6
+      }
     }
   }
 }

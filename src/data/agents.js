@@ -168,6 +168,6 @@ export const SPARK_DATA = AGENT_ORDER.map((slug) => {
     slug,
     name: AGENTS[slug].name,
     series,
-    w5: series[series.length - 1],
+    w8: series[series.length - 1],
   }
 })

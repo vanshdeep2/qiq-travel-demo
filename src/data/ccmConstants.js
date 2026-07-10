@@ -15,7 +15,9 @@ export const AMENDMENTS_AHT = [441, 456, 470, 492, 495, 408, 393, 380]
 export const AMENDMENTS_FCR = [58.5, 44.8, 42.5, 38.7, 37.0, 61.2, 62.7, 58.9]
 export const T1_RESOLUTION = AMENDMENTS_FCR
 export const COACHING_DEPLOYMENT = [0, 0, 0, 0, 100, 80, 60, 40]
-export const CF_WEEKLY = [17, 18, 23, 27, 13, 10, 7, 9]
+export const FORMAL_COACHING_AGENTS = [0, 0, 0, 0, 4, 4, 3, 2]
+export const MICRO_COACHING_TRIGGERS = [28, 31, 34, 36, 24, 14, 9, 6]
+export const CF_WEEKLY = [77, 82, 105, 123, 59, 45, 32, 41]
 export const CF_BAR_COLORS = ['#c0392b', '#c0392b', '#c0392b', '#c0392b', '#d97706', '#1a7a4a', '#1a7a4a', '#1a7a4a']
 
 export const COACHING_HEALTH_STATS = [
@@ -81,7 +83,13 @@ export const PATTERN_CARDS = [
   { variant: 'red', title: 'Amendments Queue Performance Gap', level: 'Queue level', body: 'Holiday Amendments & Cancellations is the worst-performing queue on every KPI: 50% FCR vs 72% on New Booking Enquiries, 444s AHT vs 323s, 37% repeat contact rate, and lowest CSAT at 3.1. Documentation Accuracy and Save & Rebook are the weakest quality pillars.', tags: [{ text: 'FCR -22%', className: 'tag tag-red' }, { text: 'AHT +120s', className: 'tag tag-red' }, { text: 'RCR +24pts', className: 'tag tag-red' }, { text: 'CSAT -0.8', className: 'tag tag-red' }] },
   { variant: 'amber', title: 'Micro Coaching Without Save & Rebook', level: 'Agent level', body: 'Daily QiQ micro coaching fired on amendments agents throughout W1-W4 but behaviour did not improve - agents continued processing cancellations without offering alternative dates. This pattern triggered formal coaching for 4 agents at W5.', tags: [{ text: 'Micro daily W1-W4', className: 'tag tag-amber' }, { text: 'No behaviour change', className: 'tag tag-amber' }, { text: '4 formal flags W5', className: 'tag tag-amber' }] },
   { variant: 'green', title: 'Formal Coaching Drives Amendments Recovery', level: 'Team level', body: 'After W5 formal TL-led sessions on the four flagged agents, Amendments queue FCR rose from 37% to 59% by W8. CSAT partially recovered and repeat contact rate dropped. Micro coaching frequency on coached agents fell as behaviours stabilised.', tags: [{ text: 'FCR +22pts', className: 'tag tag-green' }, { text: 'CSAT +0.3', className: 'tag tag-green' }, { text: 'RCR -8pts', className: 'tag tag-green' }] },
-  { variant: 'red', title: 'Critical Failure Cluster on Amendments', level: 'Quality level', body: 'Five critical failure types cluster on amendment contacts: policy misquote, no Save & Rebook, no case notes, escalation avoidance, and verification failure. 85 critical failures in W1-W4 vs 26 in W6-W8.', tags: [{ text: 'CF 85 → 26', className: 'tag tag-green' }, { text: '5 failure types', className: 'tag tag-red' }, { text: 'Amendments queue', className: 'tag tag-red' }] },
+  { variant: 'red', title: 'Critical Failure Cluster on Amendments', level: 'Quality level', body: 'Five critical failure types cluster on amendment contacts: policy misquote, no Save & Rebook, no case notes, escalation avoidance, and verification failure. 387 critical failures in W1–W4 vs 118 in W6–W8.', tags: [{ text: 'CF 387 → 118', className: 'tag tag-green' }, { text: '5 failure types', className: 'tag tag-red' }, { text: 'Amendments queue', className: 'tag tag-red' }] },
+]
+
+export const QUEUE_COMPARISON = [
+  { queue: 'Holiday Amendments & Cancellations', fcr: '50%', aht: '7m 24s', rcr: '37%', csat: '3.1', highlight: true },
+  { queue: 'New Booking Enquiries', fcr: '72%', aht: '5m 23s', rcr: '14%', csat: '3.9', highlight: false },
+  { queue: 'Post-Travel & Complaints', fcr: '68%', aht: '5m 41s', rcr: '16%', csat: '3.8', highlight: false },
 ]
 
 export const BEST_PRACTICE_CARDS = [
